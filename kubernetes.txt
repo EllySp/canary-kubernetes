@@ -1,0 +1,60 @@
+COMANDOS UTILES Y EXPLICACIÓNES
+Instalar el cliente de kuberneter (kubectl):
+
+https://pwittrock.github.io/docs/tasks/tools/install-kubectl/
+
+ver la version en linux:
+kubectl version --client=true
+
+Instarlar un cluster de kubernetes:
+
+mediante minikube
+
+https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download
+
+Para conectar tu cliente a tu cluster necesitas tu kubeconfig:
+
+kubeconfig (declarados todos tus contextos)
+
+minikube start
+
+kubectl get nodes (muestra los nodos en acción)
+
+kubectl --help
+
+kubectl config get-contexts
+
+kubectl get ns
+
+kubectl -n kube-system get pods  (agarra todos los pots en el ns kube-system )
+kubectl -n kube-system get pods -o wide
+
+kubectl -n kube-system delete pot NAMEPOT
+
+Levantar un pot con un contenedor:
+
+kubectl apply -f 01-pod.yaml  (ns default)
+
+kubectl get pods 
+
+kubectl exec -it nginx -- sh  (dentro del contenedor corriendo una terminal de nginx) Ctrl+D para salir 
+
+kubectl get pod nginx -o yaml
+
+
+-- Deberiamos deployar deployments:
+
+kuberctl apply -f 04-deployment.yaml 
+
+kuberctl delete -f 04-deployment.yaml 
+
+kubectl describe pot (ver eventos y cosas sobre el POT)
+
+kubectl get statefulsets
+kubectl delete pvc   (volumenes)
+
+a esto se le puede agregar manifiestos, etc, etc
+
+kubectl get all 
+
+kubectl get ing
