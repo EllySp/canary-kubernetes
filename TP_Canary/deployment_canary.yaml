@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: hello-canary
-        image: gcr.io/google-samples/hello-app:2.0
+        image: ellyndra/calidad-software:canary
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 

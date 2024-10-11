@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: hello-v1
-        image: gcr.io/google-samples/hello-app:1.0
+        image: ellyndra/calidad-software:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 
